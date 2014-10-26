@@ -1,0 +1,7 @@
+#RewriteEngine on
+#RewriteRule ^(.*)$ public_html/index.php [L]
+
+
+# Redirect permanent /php/beispiel1/ http://localhost:1104/php/tryit/
+# RewriteRule ^(.*).html$ $1.php
+# RewriteRule ^(/)?$ public_html/index.php [L]

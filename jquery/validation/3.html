@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery validation plug-in - main demo</title>
+	<link rel="stylesheet" href="css/screen.css">
+	<script src="../lib/jquery.js"></script>
+	<script src="../dist/jquery.validate.js"></script>
+	<script>
+
+	$.validator.setDefaults({
+		submitHandler: function() {
+			alert("submitted!");
+		}
+	});
+
+	$(document).ready(function() {
+		$("#commentForm").validate();
+	});
+
+	</script>
+</head>
+<body>
+
+<div id="main">
+	<form class="cmxform" id="commentForm" method="get" action="">
+		<fieldset>
+				<label for="cname">Name (required, at least 2 characters)</label>
+				<input id="cname" name="name" minlength="2" type="text" required>
+				<input class="submit" type="submit" value="Submit">
+		</fieldset>
+	</form>
+</div>
+</body>
+</html>

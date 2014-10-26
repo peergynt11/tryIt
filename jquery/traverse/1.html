@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery</title>
+
+<link rel="stylesheet" href="../css/jquery-ui.css">
+<link rel="stylesheet" href="../css/dataTables.jqueryui.css">
+
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/jquery.dataTables.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+    function traverse_1(){
+      var tbl = $('#table').dataTable();
+      var cells = new Array();
+      alert ("Bernd");
+      $('#table tr').each(function (){
+          cells.push($(this).html());
+      });
+         console.log(cells);
+    }
+
+    function traverse_2(){
+
+      $('#table tr:has(td)').each(function (){
+         $(this).add("span").css("background-color","yellow");
+         $(this).attr("id", "Bernd Vierhuf" );
+      });
+//      $('#table > tbody:last').append ('<tr class="odd" role="row"><td>neuer Eintrag</td><td>99</td></tr>');
+
+
+
+
+    }
+
+    function traverse_3(){
+      var cells = new Array();
+      $("[col=PK]").each(function (){
+
+          cells.push($(this).html());
+      });
+      console.log(cells);
+    }
+
+    function traverse_4(){
+      var cells = new Array();
+      $("#table td:first-child").each(function (){
+           $("[col=PK]").each(function (){
+             cells.push($(this).html());
+           });
+      });
+      console.log(cells);
+ }
+
+    function traverse_5(){
+    var x = $('#table').DataTable();
+      $('#table').DataTable().row.add( ['xxx', 61, 'yxcyxcyxc', '<a class="editParameter ui-icon ui-icon-pencil" href="#"></a>', '<a class="editParameter ui-icon ui-icon-pencil" href="#"></a>'] ).draw();
+
+
+      //$('#table').DataTable().row.add( {
+      //  "Parameter":  'Neu',
+      //  "Value":      '77',
+      //  "Comment":    'der neue parameter',
+      //  "Delete":     '<a class="editParameter ui-icon ui-icon-pencil" href="#"></a>',
+      //  "Edit":       '<a class="editParameter ui-icon ui-icon-pencil" href="#"></a>'
+      //}).draw();
+    }
+
+    function traverse_6(){
+    var x = $('#table').DataTable();
+      $('#table').DataTable().row.add( ['xxx', 61, 'yxcyxcyxc', '<a class="editParameter ui-icon ui-icon-pencil" href="#"></a>', '<a class="editParameter ui-icon ui-icon-pencil" href="#"></a>'] ).draw();
+
+
+      //$('#table').DataTable().row.add( {
+      //  "Parameter":  'Neu',
+      //  "Value":      '77',
+      //  "Comment":    'der neue parameter',
+      //  "Delete":     '<a class="editParameter ui-icon ui-icon-pencil" href="#"></a>',
+      //  "Edit":       '<a class="editParameter ui-icon ui-icon-pencil" href="#"></a>'
+      //}).draw();
+    }    
+    
+    $('#table').dataTable();   
+ 
+ 
+    var table = $('#table').DataTable();
+     $('#table tbody').on( 'click', 'tr', function () {
+        console.log( table.row( this ).data()[1] );
+        table.row( this ).data(['cc', '10', 'sd', 'f', 'G']).draw();	
+    } );    
+    
+    $("#button").button({
+    })
+     .click(function() {
+         traverse_5();
+     });
+
+})
+
+</script>
+
+</head>
+<body>
+<h1>Welcome</h1>
+
+<button id="button">Click</button>
+<br><br><br>
+
+<table id="table" class="display hover nowrap cell-border"><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Comment</th>
+<th>Delete</th>
+<th>Edit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td col="PK">AuthorCutOff</td>
+<td col="PK">90</td>
+<td>Dies ist eine Comment</td>
+<td>xx</td>
+<td>bb</td>
+</tr>
+<tr>
+<td class="PK">asdasd</td>
+<td>45</td>
+<td>Dies ist eine Comment</td>
+<td>uu</td>
+<td b="xx">nn</td>
+</tr>
+<tr>
+<td class="PK">lll</td>
+<td b="xx">45</td>
+<td b="xx">Dies ist eine Comment</td>
+<td>uu</td>
+<td>nn</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>add background color yellow</p>
+
+</body>
+</html>

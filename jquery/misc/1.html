@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery</title>
+
+<link rel="stylesheet" href="../css/jquery-ui.css">
+<link rel="stylesheet" href="../css/dataTables.jqueryui.css">
+
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/jquery.dataTables.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+
+
+$('#1').dialog({
+                   autoOpen: false,
+                   modal: false,
+                   title: 'Primary Key Violation',
+                   buttons: {
+                    Ok: function() {
+                       $(this).dialog("close");
+                    },
+                    Open: function() {
+                       $('#2').dialog("open");
+                    }
+                   }
+                });
+
+$('#2').dialog({
+                   autoOpen: false,
+                   modal: false,
+                   title: 'Primary Key Violation',
+                   buttons: {
+                    Ok: function() {
+                       $(this).dialog("close");
+                    }
+                   }
+                });
+
+
+    $("#button1").button({
+    })
+     .click(function() {
+         $('#1').dialog("open");
+     });
+
+    $("#button2").button({
+    })
+     .click(function() {
+         $('#2').dialog("open");
+     });
+
+})
+
+</script>
+
+</head>
+<body>
+<h1>Welcome</h1>
+
+
+<div id="1">Dia 1</div>
+<div id="2">Dialog 2</div>
+
+<button id="button1">Click</button>
+<button id="button2">Click</button>
+
+
+<br><br><br>
